@@ -1,0 +1,4 @@
+*.swp
+*_amd64
+*.tmp
+*.log
