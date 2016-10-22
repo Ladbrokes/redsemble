@@ -77,7 +77,7 @@ func (r *redisStream) run() {
 			if len(cmd.Args) > 1 {
 				printing = append(printing, string(cmd.Args[1]))
 				if len(cmd.Args) > 2 {
-					printing = append(printing, strconv.Itoa(len(cmd.Args[2])))
+					printing = append(printing, strconv.Itoa(len(bytes.Join(cmd.Args[2:], []byte(" ")))))
 				}
 			}
 			fmt.Println(strings.Join(printing, *fdelimiter))
